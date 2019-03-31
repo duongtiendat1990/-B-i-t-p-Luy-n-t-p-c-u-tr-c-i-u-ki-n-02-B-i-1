@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<form action="">
+    <fieldset style="width: 300px">
+        <legend style="">Converter</legend>
+        <table border="20">
+            <tr>
+                <th style="font-weight: bold;" colspan="2" onmouseup="checkConverterType();">
+                    <select name="Type" id="type" style="width: 100%" >
+                        <option value="temperature">Temperature</option>
+                        <option value="length">Length</option>
+                    </select>
+                </th>
+            </tr>
+            <tr>
+                <td><input type="number" id="fromValue" onkeyup="checkFromUnit();"></td>
+                <td>
+                    <select name="From" id="From" style="width: 100%" onmouseup="checkFromUnit();">
+                        <option id="fromOp1" value="Celsius" class="temperature">Celsius</option>
+                        <option id="fromOp2" value="Fahrenheit" class="temperature">Fahrenheit</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="number" id="toValue" onkeyup="checkToUnit();"></td>
+                <td>
+                    <select name="To" id="To" style="width: 100%" onmouseup="checkToUnit();">
+                        <option id="toOp1" value="Celsius" class="temperature">Celsius</option>
+                        <option id="toOp2" value="Fahrenheit" class="temperature">Fahrenheit</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+    <script src="script.js"></script>
+</form>
+</body>
+</html>
