@@ -46,16 +46,16 @@ function checkFromUnit() {
     } else  {
         switch (fromUnit.value) {
             case "Celsius":
-                toValue = (fromValue*9/5)+32 ;
+                toValue = celsiusToFahrenheit(fromUnit.value) ;
             break;
             case "Fahrenheit":
-                toValue = (fromValue-32)*5/9;
+                toValue = fahrenheitToCelsius(fromUnit.value);
             break;
             case "Meters":
-                toValue = fromValue * 3.28084;
+                toValue = metersToFeet(fromUnit.value);
             break;
             case "Feet":
-                toValue = fromValue / 3.28084;
+                toValue = feetToMeters(fromUnit.value);
             break;
         }
     }
@@ -71,18 +71,33 @@ function checkToUnit() {
     } else  {
         switch (toUnit.value) {
             case "Celsius":
-                fromValue = (toValue*9/5)+32;
+                fromValue = celsiusToFahrenheit(toUnit.value);
             break;
             case "Fahrenheit":
-                fromValue = (toValue-32)*5/9;
+                fromValue = fahrenheitToCelsius(toUnit.value);
             break;
             case "Meters":
-                fromValue = toValue*3.28084 ;
+                fromValue = metersToFeet(toUnit.value) ;
             break;
             case "Feet":
-                fromValue = toValue/3.28084 ;
+                fromValue = feetToMeters(toUnit.value) ;
             break;
         }
     }
     document.getElementById("fromValue").value = fromValue;
+}
+function celsiusToFahrenheit(celsius) {
+    farenheit = (celsius*9/5)+32;
+    return farenheit
+}
+function fahrenheitToCelsius(fahrenheit) {
+    celsius = (fahrenheit-32)*5/9
+}
+function metersToFeet(meters) {
+    feet = meters * 3.28084;
+    return feet;
+}
+function feetToMeters(feet) {
+    meters = feet / 3.29084;
+    return meters;
 }
